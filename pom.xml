@@ -44,6 +44,27 @@
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+		<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>2.2.0</version>
+		</dependency>
+
+		<!-- MariaDB --> 
+		<dependency> 
+			<groupId>org.mariadb.jdbc</groupId> 
+			<artifactId>mariadb-java-client</artifactId> 
+			<version>2.7.4</version>
+		</dependency>
 
         <!-- bootstrap and jquery -->
         <dependency>
