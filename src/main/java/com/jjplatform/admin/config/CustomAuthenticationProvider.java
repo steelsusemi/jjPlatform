@@ -10,11 +10,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.jjplatform.admin.service.CustomUserDetailsService;
+import com.jjplatform.admin.service.impl.CustomUserDetailsServiceImpl;
 import com.jjplatform.admin.vo.CustomUserDetails;
 
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 	@Autowired
-    private CustomUserDetailsService userDetailsService;
+    private CustomUserDetailsServiceImpl userDetailsService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;

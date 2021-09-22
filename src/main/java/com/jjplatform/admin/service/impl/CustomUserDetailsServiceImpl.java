@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.jjplatform.admin.dao.UserAuthDAO;
+import com.jjplatform.admin.vo.CustomUserDetails;
 
 @Service("customUserDetailsServiceImpl")
 public class CustomUserDetailsServiceImpl implements UserDetailsService {
@@ -15,7 +16,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
     private UserAuthDAO userAuthDAO;
  
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public CustomUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userAuthDAO.loadUserByUsername(username);
     }
 

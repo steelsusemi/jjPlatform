@@ -5,16 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
+import com.jjplatform.admin.vo.CustomUserDetails;
+
 @Repository("userAuthDAO")
 public class UserAuthDAO {
 	
-	@SuppressWarnings("unused")
-	private String NAME_SPACE = "user.";
+	private String NAME_SPACE = "com.jjplatform.admin.dao.userAuthDAO.";
 	
 	@Autowired
     private SqlSessionTemplate sqlSession;
  
-    public UserDetails loadUserByUsername(String username) {
-        return sqlSession.selectOne("user."+ "selectUserById", username);
+    public CustomUserDetails loadUserByUsername(String username) {
+        return sqlSession.selectOne(NAME_SPACE + "selectUserById", username);
     }
 }

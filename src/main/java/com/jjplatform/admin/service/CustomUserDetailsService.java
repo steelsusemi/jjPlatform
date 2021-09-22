@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.jjplatform.admin.vo.CustomUserDetails;
 
-@Service
 public interface CustomUserDetailsService {
  
     CustomUserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
