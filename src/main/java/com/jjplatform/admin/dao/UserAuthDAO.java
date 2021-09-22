@@ -10,7 +10,7 @@ import com.jjplatform.admin.vo.CustomUserDetails;
 @Repository("userAuthDAO")
 public class UserAuthDAO {
 	
-	private String NAME_SPACE = "com.jjplatform.admin.dao.userAuthDAO.";
+	private String NAME_SPACE = "com.jjplatform.admin.dao.UserAuthDAO.";
 	
 	@Autowired
     private SqlSessionTemplate sqlSession;

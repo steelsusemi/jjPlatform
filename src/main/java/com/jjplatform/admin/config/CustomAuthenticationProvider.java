@@ -31,7 +31,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         CustomUserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
         // password 일치하지 않으면!
-        if(!passwordEncoder.matches(password, userDetails.getPassword())){
+        if(userDetails == null || !passwordEncoder.matches(password, userDetails.getPassword())){
             throw new BadCredentialsException("BadCredentialsException");
         }
         
