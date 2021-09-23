@@ -33,15 +33,16 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
   # model 프로퍼티 camel case 설정
-  configuration:
-    map-underscore-to-camel-case: true
+  config-location: classpath:mybatis-config.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
   # 패키지 명을 생략할 수 있도록 alias 설정
   type-aliases-package: com.jjplatform.admin.vo
 
 # mapper 로그레벨 설정      
 logging:
   level:
-    root: WARN
-    com.jjplatform.admin.dao: DEBUG
+    root: INFO
+    com.jjplatform.admin.dao: debug
     org.springframework.web: INFO
     org.springframework.security: INFO

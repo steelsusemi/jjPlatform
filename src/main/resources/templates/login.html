@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{fragments/layout}">
 <head>
@@ -50,6 +51,19 @@
                         </div>
                     </div>
                 </div>
+                <span sec:authorize="isAuthenticated()" style="display: inline-block;">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-sm-6 col-sm-offset-3">
+	                            <input type="button"
+	                                   name="memeberJoin"
+	                                   id="memeberJoin"
+	                                   class="form-control btn btn-info"
+	                                   value="MemberJoin">
+	                        </div>
+	                    </div>
+	                </div>
+                </span>
             </form>
         </div>
     </div>

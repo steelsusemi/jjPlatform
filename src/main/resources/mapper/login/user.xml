@@ -3,11 +3,13 @@
 
 <mapper namespace="com.jjplatform.admin.dao.UserAuthDAO">
 
-    <select id="selectUserById" parameterType="string" resultType="CustomUserDetails">
-        SELECT user_id, user_pass
-        FROM user_info
+    <select id="selectUserById" parameterType="string" resultType="UserVo">
+        SELECT USER_ID
+        	 , USER_PASS
+        	 , 'ROLE_USER' AS AUTHORITY
+        FROM USER_INFO
         <where>
-            AND user_id = #{username}
+            AND USER_ID = #{username}
         </where>
         <!-- <if test="limit != null and offset != null">
             LIMIT #{limit}
