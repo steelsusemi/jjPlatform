@@ -6,6 +6,6 @@ import lombok.Data;
 public class UserVo {
 	private String userId;
     private String userPass;
-    private String authority;
+    private String userRole;
     private String userNm;
 }

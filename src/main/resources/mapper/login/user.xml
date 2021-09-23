@@ -4,12 +4,14 @@
 <mapper namespace="com.jjplatform.admin.dao.UserAuthDAO">
 
     <select id="selectUserById" parameterType="string" resultType="UserVo">
-        SELECT USER_ID
-        	 , USER_PASS
-        	 , 'ROLE_USER' AS AUTHORITY
-        FROM USER_INFO
+        SELECT A.USER_ID
+        	 , A.USER_PASS
+        	 , B.USER_ROLE
+        FROM USER_INFO A
+           , USER_ROLE B
         <where>
-            AND USER_ID = #{username}
+        	AND A.USER_ID = B.USER_ID
+            AND A.USER_ID = #{username}
         </where>
         <!-- <if test="limit != null and offset != null">
             LIMIT #{limit}

@@ -28,7 +28,7 @@ public class CustomUserDetails implements UserDetails {
         ArrayList<GrantedAuthority> roles = new ArrayList<GrantedAuthority>();
         
         for(int x=0; x<userVo.size(); x++) {
-        	roles.add(new SimpleGrantedAuthority(userVo.get(x).getAuthority()));
+        	roles.add(new SimpleGrantedAuthority(userVo.get(x).getUserRole()));
 		}
         
         return roles;

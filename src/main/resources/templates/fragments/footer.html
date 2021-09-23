@@ -9,7 +9,7 @@
                 &copy; JJPlatform.com
                 <span sec:authorize="isAuthenticated()" style="display: inline-block;">
                     | Logged user: <span sec:authentication="name"></span> |
-                    Roles: <span sec:authentication="principal.authorities"></span> |
+                    Roles: <span sec:authentication="authorities[0]"></span> |
                     <a th:href="@{/logout}">Sign Out</a>
                 </span>
             </p>
