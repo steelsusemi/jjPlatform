@@ -14,7 +14,40 @@ spring:
     url: jdbc:sqlserver://127.0.0.1:1433;databaseName=jjplatform
     username: jjplatform
     password: akfls5315!@
-    hikari:
+    
+---
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+     # mariaDB
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
+    # mssqlDB
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=jjplatform
+    username: jjplatform
+    password: akfls5315!@
+    
+---
+  
+spring:
+  profiles:
+    active: prod
+  datasource:
+     # mariaDB
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
+    # mssqlDB
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=jjplatform
+    username: jjplatform
+    password: akfls5315!@
+    
+  hikari:
       pool-name: JJPLATFormHikariCP
       maximum-pool-size: 2
       idle-timeout: 30000
@@ -22,7 +55,7 @@ spring:
       validation-timeout: 10000
       max-lifetime: 1800000
       connection-test-query: SELECT 1
-
+      
   thymeleaf:
     cache: false
     check-template: true
