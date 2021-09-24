@@ -2,11 +2,14 @@ server:
   port: 8080
 
 spring:
+  profiles:
+    active: local
   datasource:
      # mariaDB
 #    driver-class-name: org.mariadb.jdbc.Driver
 #    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
     # mssqlDB
+    type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://127.0.0.1:1433;databaseName=jjplatform
     username: jjplatform
@@ -14,12 +17,12 @@ spring:
     hikari:
       pool-name: JJPLATFormHikariCP
       maximum-pool-size: 2
-      idle-timeout: 10000
-      connection-timeout: 10000
+      idle-timeout: 30000
+      connection-timeout: 30000
       validation-timeout: 10000
-      max-lifetime: 28770000
-      connection-init-sql: set wait_timeout = 600
-    
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+
   thymeleaf:
     cache: false
     check-template: true
@@ -50,3 +53,5 @@ logging:
     com.jjplatform.admin.dao: debug
     org.springframework.web: INFO
     org.springframework.security: INFO
+    com.zaxxer.hikari.HikariConfig: DEBUG 
+    com.zaxxer.hikari: TRACE

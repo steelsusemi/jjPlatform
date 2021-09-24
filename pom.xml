@@ -78,9 +78,8 @@
 		
 		 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-hikaricp -->
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-hikaricp</artifactId>
-			<version>5.4.10.Final</version>
+		   <groupId>com.zaxxer</groupId>
+		   <artifactId>HikariCP</artifactId>
 		</dependency>
 
         <!-- bootstrap and jquery -->
