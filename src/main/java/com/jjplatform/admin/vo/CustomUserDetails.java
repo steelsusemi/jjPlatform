@@ -15,13 +15,12 @@ import lombok.Data;
 public class CustomUserDetails implements UserDetails {
 	
 	private List<UserVo> userVo;
+	private boolean enabled;
 	
 	public CustomUserDetails(List<UserVo> userAuthes) {
 		this.userVo = userAuthes;
 	}
 	
-    private boolean enabled;
-    
     // 계정이 갖고있는 권한 목록을 리턴한다.
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
