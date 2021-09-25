@@ -6,12 +6,12 @@ spring:
     active: local
   datasource:
      # mariaDB
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
     # mssqlDB
     type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=jjplatform
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=jjplatform
     username: jjplatform
     password: akfls5315!@
     
@@ -22,12 +22,12 @@ spring:
     active: dev
   datasource:
      # mariaDB
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
     # mssqlDB
     type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://127.0.0.1:1432;databaseName=jjplatform
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://127.0.0.1:1432;databaseName=jjplatform
     username: jjplatform
     password: akfls5315!@
     
@@ -38,15 +38,15 @@ spring:
     active: prod
   datasource:
      # mariaDB
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jjplatform?serverTimezone=UTC&characterEncoding=UTF-8
     # mssqlDB
     type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://127.0.0.1:1431;databaseName=jjplatform
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://127.0.0.1:1431;databaseName=jjplatform
     username: jjplatform
     password: akfls5315!@
-    
+
   hikari:
       pool-name: JJPLATFormHikariCP
       maximum-pool-size: 2
