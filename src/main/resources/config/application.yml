@@ -18,6 +18,10 @@ spring:
     # excluded-view-names:
     # template-resolver-order:
     # view-names:
+    
+  devtools:
+    livereload:
+      enabled: true
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

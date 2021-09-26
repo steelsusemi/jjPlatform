@@ -11,9 +11,9 @@ public class LoginController {
         return "index";
     }
 
-    @GetMapping("/user")
-    public String userIndex() {
-        return "user/main";
+    @GetMapping("/main")
+    public String main() {
+        return "main/main";
     }
 
     @GetMapping("/login")

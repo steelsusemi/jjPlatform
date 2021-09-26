@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="topHeader(title)">
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+		crossorigin="anonymous">
+	<link href="/css/starter-template.css" type="text/css" th:href="@{/css/starter-template.css}"rel="stylesheet" >
+	
+	<title th:text="${title}">Hello, Spring Boot!</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" th:fragment="topMenu(menu)">
+		<a class="navbar-brand" href="#" th:href="@{/}">Spring Boot Trutorial</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarsExampleDefault"
+			aria-controls="navbarsExampleDefault" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item" th:classappend="${menu} == 'home' ? 'active' : ''">
+					<a class="nav-link" href="#" th:href="@{/}">홈<span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+				</li>
+				<li class="nav-item" th:classappend="${menu} == 'board' ? 'active' : ''">
+					<a class="nav-link" href="#" th:href="@{/board/list}">게시판<span class="sr-only" th:if="${menu} == 'board'">(current)</span></a></a>
+				</li>
+			</ul>
+		</div>
+		<!-- <li class="nav-item"><a class="nav-link disabled" href="#"
+			tabindex="-1" aria-disabled="true">Disabled</a></li>
+		<li class="nav-item dropdown"><a
+			class="nav-link dropdown-toggle" href="#" id="dropdown01"
+			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+			<div class="dropdown-menu" aria-labelledby="dropdown01">
+				<a class="dropdown-item" href="#">Action</a> <a
+					class="dropdown-item" href="#">Another action</a> <a
+					class="dropdown-item" href="#">Something else here</a>
+			</div></li>
+		</ul> -->
+		<a class="btn btn-secondary my-2 my-sm-0 mr-2" th:href="@{/account/login}" sec:authorize="!isAuthenticated()">로그인</a>
+		<a class="btn btn-secondary my-2 my-sm-0 mr-2" th:href="@{/account/resister}" sec:authorize="!isAuthenticated()">회원가입</a>
+		<form class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="POST"  sec:authorize="isAuthenticated()">
+			<!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+			<span class="text-white mx-2" sec:authentication="name">사용자</span>
+			<span class="text-white mx-2" sec:authentication="principal.authorities">권한</span>
+			<button class="btn btn-secondary my-2 my-sm-0" type="submit">Logout</button>
+		</form>
+	</nav>
+	
+	<nav aria-label="Page navigation example" th:fragment="paging(objs)">
+		<ul class="pagination justify-content-center">
+			<li class="page-item" th:classappend="${1 == objs.pageable.pageNumber + 1} ? 'disabled' : ''">
+				<a class="page-link" href="#" th:href="@{/board/list(page=${objs.pageable.pageNumber - 1}, searchText=${param.searchText})}" tabindex="-1" aria-disabled="true">Previous</a>
+			</li>
+			<li class="page-item" th:classappend="${i == objs.pageable.pageNumber + 1} ? 'disabled' : ''" th:each="i : ${#numbers.sequence(startPage, endPage)}">
+				<a class="page-link" href="#" th:href="@{/board/list(page=${i - 1}, searchText=${param.searchText})}" th:text="${i}">1</a>
+			</li>
+			<li class="page-item" th:classappend="${objs.totalPages == objs.pageable.pageNumber + 1} ? 'disabled' : ''">
+				<a class="page-link" href="#" th:href="@{/board/list(page=${objs.pageable.pageNumber + 1}, searchText=${param.searchText})}">Next</a>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

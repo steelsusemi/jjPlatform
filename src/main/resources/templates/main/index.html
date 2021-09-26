@@ -3,11 +3,12 @@
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{fragments/layout}">
 <head>
-    <title>main</title>
+	<meta charset="UTF-8">
+    <title>Secured</title>
 </head>
 <body>
 <div layout:fragment="content" th:remove="tag">
-    <h1>Hello Main Pages!!</h1>
+    <h1>This is a secured page!</h1>
     <p><a href="/" th:href="@{/}">Back to home page</a></p>
 </div>
 </body>

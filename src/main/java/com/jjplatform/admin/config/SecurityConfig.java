@@ -29,13 +29,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/user/**").hasRole("USER")
+                    .antMatchers("/main/**").hasRole("USER")
                     .anyRequest().authenticated()
                 .and()
                 .formLogin()
                     .loginPage("/login")
                     .permitAll()
-                    .defaultSuccessUrl("/user")
+                    .defaultSuccessUrl("/main")
                 .and()
                 .logout()
                     .invalidateHttpSession(true)
