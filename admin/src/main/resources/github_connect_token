@@ -9,6 +9,7 @@ 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
 
 
 
+
 -- active --
 ## opencofig -> profiles에서 수정 가능함
 spring.profiles.active=local
