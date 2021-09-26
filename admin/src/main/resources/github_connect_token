@@ -1,0 +1,12 @@
+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
+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
+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
+
+
+
+
+
+
+-- active --
+## opencofig -> profiles에서 수정 가능함
+spring.profiles.active=local
